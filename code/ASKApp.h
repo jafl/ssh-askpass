@@ -1,0 +1,24 @@
+/******************************************************************************
+ ASKApp.h
+
+	Copyright (C) 2006 by John Lindal.
+
+ *****************************************************************************/
+
+#ifndef _H_ASKApp
+#define _H_ASKApp
+
+#include <JXApplication.h>
+
+class ASKApp : public JXApplication
+{
+public:
+
+	ASKApp(int* argc, char* argv[]);
+
+	virtual	~ASKApp();
+
+	static void	InitStrings();
+};
+
+#endif

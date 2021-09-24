@@ -1,0 +1,7 @@
+nps-ssh-askpass
+Makefile
+*.o
+*.bak
+code/askStringData.h
+strings/version
+.jcc
