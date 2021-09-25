@@ -1,5 +1,5 @@
 /******************************************************************************
- nps-ssh-askpass.cpp
+ main.cpp
 
 	Copyright (C) 2006 by John Lindal.
 
@@ -63,21 +63,21 @@ ParseTextOptions
 {
 	long index = 1;
 	while (index < argc)
-		{
+	{
 		if (JIsVersionRequest(argv[index]))
-			{
+		{
 			ASKApp::InitStrings();
 			PrintVersion();
 			exit(0);
-			}
+		}
 		else if (JIsHelpRequest(argv[index]))
-			{
+		{
 			ASKApp::InitStrings();
 			PrintCommandLineHelp();
 			exit(0);
-			}
-		index++;
 		}
+		index++;
+	}
 }
 
 /******************************************************************************
@@ -102,10 +102,10 @@ void
 PrintCommandLineHelp()
 {
 	const JUtf8Byte* map[] =
-		{
+	{
 		"version",   ASKGetVersionNumberStr().GetBytes(),
 		"copyright", JGetString("COPYRIGHT").GetBytes()
-		};
+	};
 	const JString s = JGetString("CommandLineHelp::main", map, sizeof(map));
 	std::cout << std::endl << s << std::endl << std::endl;
 }

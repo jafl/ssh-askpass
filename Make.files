@@ -4,7 +4,7 @@
 
 @nps-ssh-askpass
 
-.cpp ./code/nps-ssh-askpass
+.cpp ./code/main
 .cpp ./code/ASKApp
 .cpp ./code/askGlobals
 .cpp ./code/ASKDialog

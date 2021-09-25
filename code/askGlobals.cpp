@@ -72,9 +72,9 @@ JString
 ASKGetVersionStr()
 {
 	const JUtf8Byte* map[] =
-		{
+	{
 		"version",   JGetString("VERSION").GetBytes(),
 		"copyright", JGetString("COPYRIGHT").GetBytes()
-		};
+	};
 	return JGetString("Description::askGlobals", map, sizeof(map));
 }

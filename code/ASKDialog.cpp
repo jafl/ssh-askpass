@@ -53,12 +53,12 @@ bool
 ASKDialog::OKToDeactivate()
 {
 	if (JXGetStringDialog::OKToDeactivate())
-		{
+	{
 		std::cout << GetString() << std::endl;
 		return true;
-		}
+	}
 	else
-		{
+	{
 		return false;
-		}
+	}
 }
