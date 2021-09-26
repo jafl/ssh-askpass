@@ -8,7 +8,7 @@
 #ifndef _H_ASKApp
 #define _H_ASKApp
 
-#include <JXApplication.h>
+#include <jx-af/jx/JXApplication.h>
 
 class ASKApp : public JXApplication
 {

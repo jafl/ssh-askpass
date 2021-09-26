@@ -9,7 +9,7 @@
 
 #include "askGlobals.h"
 #include "ASKApp.h"
-#include <jAssert.h>
+#include <jx-af/jcore/jAssert.h>
 
 static ASKApp*	theApplication  = nullptr;		// owns itself
 

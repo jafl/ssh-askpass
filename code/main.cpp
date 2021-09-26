@@ -8,8 +8,8 @@
 #include "ASKApp.h"
 #include "ASKDialog.h"
 #include "askGlobals.h"
-#include <jCommandLine.h>
-#include <jAssert.h>
+#include <jx-af/jcore/jCommandLine.h>
+#include <jx-af/jcore/jAssert.h>
 
 // Prototypes
 

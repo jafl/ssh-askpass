@@ -10,7 +10,7 @@
 #include "ASKApp.h"
 #include "askStringData.h"
 #include "askGlobals.h"
-#include <jAssert.h>
+#include <jx-af/jcore/jAssert.h>
 
 static const JUtf8Byte* kAppSignature = "nps-ssh-askpass";
 

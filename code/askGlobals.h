@@ -8,7 +8,7 @@
 #ifndef _H_askGlobals
 #define _H_askGlobals
 
-#include <jXGlobals.h>
+#include <jx-af/jx/jXGlobals.h>
 
 // we include these for convenience
 

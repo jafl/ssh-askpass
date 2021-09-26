@@ -1,32 +1,26 @@
 # To use this file, first run "makemake" and then run "make".
 # (makemake is part of the JX distribution)
 
-JX_ROOT := ../JX
+JX_ROOT      := ../JX
+MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
 
-# Directories to search for header files
-
-SEARCHDIRS := -I./code \
-              -I${JX_ROOT}/include/jcore \
-              -I${JX_ROOT}/include/jx
-
-# other constants
-
-PROG_NAME    := nps-ssh-askpass
-PROG_VERSION := ${shell cat release/VERSION}
-SIGNATURE    := nps-ssh-askpass
-
-# makemake variables
-
+APP_NAME       := nps-ssh-askpass
+APP_VERSION    := ${shell cat release/VERSION}
+SIGNATURE      := ${APP_NAME}
 J_STRING_FILES := strings/*
 
-include ${JX_ROOT}/include/make/jx_config
+include ${MAKE_INCLUDE}/jx_config
+
+SEARCHDIRS := -I./code ${SEARCHDIRS}
+
+# makemake variables
 
 DEPENDFLAGS := ${J_COMPILER_DEPEND_FLAGS} ${SEARCHDIRS}
 
 # library dependencies
 
-LIB_DEPS := ${JX_ROOT}/lib/libjcore.a \
-            ${JX_ROOT}/lib/libjx.a
+LIB_DEPS := ${JX_LIB_ROOT}/libjcore.a \
+            ${JX_LIB_ROOT}/libjx.a
 
 # make variables
 
@@ -35,13 +29,7 @@ LDFLAGS   :=
 
 #####
 
-.PHONY : default
-default: libs ${PROG_NAME}
-
-.PHONY : Makefiles
-Makefiles:
-
-include ${JX_ROOT}/include/make/app_targets
+include ${MAKE_INCLUDE}/app_targets
 
 #
 # string data
@@ -52,58 +40,30 @@ strings: build_version_string
 	compile_jstrings ${J_STRING_FILES} \
       --code kASKDefaultStringData ./code/askStringData.h
 
-.PHONY : stringdb
-stringdb:
-	compile_jstrings ${J_STRING_FILES} --db ${PROG_NAME}_us
-
-${PROG_NAME}:: strings
-
-#
-# install binaries
-#
-
-.PHONY : jxinstall
-jxinstall: ${PROG_NAME}
-	@strip ${call EXE, ${PROG_NAME}}
-  ifneq (${J_WANT_INSTALL},0)
-	@cp ${PROG_NAME} ${JX_INSTALL_ROOT}/
-  endif
-
-.PHONY : jxuninstall
-jxuninstall:
-	@${RM} ${JX_INSTALL_ROOT}/${PROG_NAME}
+${APP_NAME}:: strings
 
 #
 # binary distributions
 #
 
-ASKPASS := ${PROG_NAME}-${PROG_VERSION}
+ASKPASS := ${APP_NAME}-${APP_VERSION}
 
 ASKPASS_TAR_DIR := ${shell pwd}
 
-ASKPASS_RELEASE_TAR_NAME := nps_ssh_askpass_${PROG_VERSION}.tar
+ASKPASS_RELEASE_TAR_NAME := nps_ssh_askpass_${APP_VERSION}.tar
 
-RPM_TAR_FILE  := ${RPM_SRC_DIR}/nps_ssh_askpass_${PROG_VERSION}.tar
-RPM_SPEC_FILE := ./release/pkg/${PROG_NAME}.spec
+RPM_TAR_FILE  := ${RPM_SRC_DIR}/nps_ssh_askpass_${APP_VERSION}.tar
+RPM_SPEC_FILE := ./release/pkg/${APP_NAME}.spec
 
-DEB_CTRL_FILE := ./release/pkg/${PROG_NAME}.debctrl
-DEB_PKG_FILE  := ${PROG_NAME}_${PROG_VERSION}_i386.deb
+DEB_CTRL_FILE := ./release/pkg/${APP_NAME}.debctrl
+DEB_PKG_FILE  := ${APP_NAME}_${APP_VERSION}_i386.deb
 
 .PHONY : release
 release: pre_build_pkgs default
-	@${J_STRIP_DEBUG} ${call EXE, ${PROG_NAME}}
+	@${J_STRIP_DEBUG} ${call EXE, ${APP_NAME}}
 	@${MAKE} PKG_PATH=${ASKPASS} init_tarball
-	@ln -s ../${call EXE,${PROG_NAME}} ${ASKPASS}/${call EXE,${PROG_NAME}}
+	@ln -s ../${call EXE,${APP_NAME}} ${ASKPASS}/${call EXE,${APP_NAME}}
 	@${MAKE} PKG_PATH=${ASKPASS} SOURCE_TAR_NAME=${ASKPASS_RELEASE_TAR_NAME} build_pkgs
-
-#
-# personal install
-#
-
-.PHONY : personal
-personal: static
-	@cp ${PROG_NAME} ${HOME}/bin/
-	@${J_STRIP_DEBUG} ${call EXE, ${HOME}/bin/${PROG_NAME}}
 
 # DO NOT DELETE THIS LINE -- Code Crusader depends on it.
 

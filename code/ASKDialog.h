@@ -8,7 +8,7 @@
 #ifndef _H_ASKDialog
 #define _H_ASKDialog
 
-#include <JXGetStringDialog.h>
+#include <jx-af/jx/JXGetStringDialog.h>
 
 class JXPasswordInput;
 
