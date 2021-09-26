@@ -1,14 +1,15 @@
 # To use this file, first run "makemake" and then run "make".
 # (makemake is part of the JX distribution)
 
-JX_ROOT      := ../JX
-MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
+JX_ROOT := ../JX
 
 APP_NAME       := nps-ssh-askpass
 APP_VERSION    := ${shell cat release/VERSION}
 SIGNATURE      := ${APP_NAME}
 J_STRING_FILES := strings/*
+RPM_LIB_PATH   := /usr/lib/${SIGNATURE}
 
+MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
 include ${MAKE_INCLUDE}/jx_config
 
 SEARCHDIRS := -I./code ${SEARCHDIRS}
@@ -25,7 +26,9 @@ LIB_DEPS := ${JX_LIB_ROOT}/libjcore.a \
 # make variables
 
 LOADLIBES := ${J_STD_LIBS}
-LDFLAGS   := 
+ifdef J_SYSTEM_HAS_SHARED_LIBS
+  LDFLAGS := -Xlinker -R${RPM_LIB_PATH}
+endif
 
 #####
 
