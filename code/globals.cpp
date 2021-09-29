@@ -1,5 +1,5 @@
 /******************************************************************************
- askGlobals.cpp
+ globals.cpp
 
 	Access to global objects and factories.
 
@@ -7,74 +7,74 @@
 
  ******************************************************************************/
 
-#include "askGlobals.h"
-#include "ASKApp.h"
+#include "globals.h"
+#include "App.h"
 #include <jx-af/jcore/jAssert.h>
 
-static ASKApp*	theApplication  = nullptr;		// owns itself
+static App*	theApplication  = nullptr;		// owns itself
 
 /******************************************************************************
- ASKCreateGlobals
+ CreateGlobals
 
 	Returns true if this is the first time the program is run.
 
  ******************************************************************************/
 
 void
-ASKCreateGlobals
+CreateGlobals
 	(
-	ASKApp* app
+	App* app
 	)
 {
 	theApplication = app;
 }
 
 /******************************************************************************
- ASKDeleteGlobals
+ DeleteGlobals
 
  ******************************************************************************/
 
 void
-ASKDeleteGlobals()
+DeleteGlobals()
 {
 	theApplication = nullptr;
 }
 
 /******************************************************************************
- ASKGetApplication
+ GetApplication
 
  ******************************************************************************/
 
-ASKApp*
-ASKGetApplication()
+App*
+GetApplication()
 {
 	assert( theApplication != nullptr );
 	return theApplication;
 }
 
 /******************************************************************************
- ASKGetVersionNumberStr
+ GetVersionNumberStr
 
  ******************************************************************************/
 
 const JString&
-ASKGetVersionNumberStr()
+GetVersionNumberStr()
 {
 	return JGetString("VERSION");
 }
 
 /******************************************************************************
- ASKGetVersionStr
+ GetVersionStr
 
  ******************************************************************************/
 
 JString
-ASKGetVersionStr()
+GetVersionStr()
 {
 	const JUtf8Byte* map[] =
 	{
 		"version",   JGetString("VERSION").GetBytes(),
 		"copyright", JGetString("COPYRIGHT").GetBytes()
 	};
-	return JGetString("Description::askGlobals", map, sizeof(map));
+	return JGetString("Description::globals", map, sizeof(map));
 }

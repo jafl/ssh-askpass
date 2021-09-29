@@ -1,5 +1,5 @@
 /******************************************************************************
- askGlobals.h
+ globals.h
 
    Copyright (C) 2006 by John Lindal.
 
@@ -12,18 +12,18 @@
 
 // we include these for convenience
 
-#include "ASKApp.h"
+#include "App.h"
 
-class ASKMDIServer;
+class MDIServer;
 
-ASKApp*			ASKGetApplication();
+App*			GetApplication();
 
-const JString&	ASKGetVersionNumberStr();
-JString			ASKGetVersionStr();
+const JString&	GetVersionNumberStr();
+JString			GetVersionStr();
 
-	// called by ASKApp
+	// called by App
 
-void	ASKCreateGlobals(ASKApp* app);
-void	ASKDeleteGlobals();
+void	CreateGlobals(App* app);
+void	DeleteGlobals();
 
 #endif

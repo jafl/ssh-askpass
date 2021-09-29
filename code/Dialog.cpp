@@ -1,33 +1,38 @@
 /******************************************************************************
- ASKApp.cpp
+ Dialog.cpp
 
-	BASE CLASS = public JXApplication
+	Asks for the passphrase and prints it to stdout.
+
+	BASE CLASS = public JXGetStringDialog
 
 	Copyright (C) 2006 by John Lindal.
 
  *****************************************************************************/
 
-#include "ASKApp.h"
-#include "askStringData.h"
-#include "askGlobals.h"
+#include "Dialog.h"
+#include "App.h"
+#include "globals.h"
+#include <jx-af/jx/JXWindow.h>
+#include <jx-af/jx/JXStaticText.h>
+#include <jx-af/jx/JXPasswordInput.h>
+#include <jx-af/jx/JXTextButton.h>
 #include <jx-af/jcore/jAssert.h>
 
-static const JUtf8Byte* kAppSignature = "nps-ssh-askpass";
+// string ID's
 
 /******************************************************************************
  Constructor
 
  *****************************************************************************/
 
-ASKApp::ASKApp
+Dialog::Dialog
 	(
-	int*	argc,
-	char*	argv[]
+	JXDirector* supervisor
 	)
 	:
-	JXApplication(argc, argv, kAppSignature, kASKDefaultStringData)
+	JXGetStringDialog(supervisor, JGetString("Title::Dialog"),
+					  JGetString("Prompt::Dialog"), JString::empty, true, true)
 {
-	ASKCreateGlobals(this);
 }
 
 /******************************************************************************
@@ -35,21 +40,25 @@ ASKApp::ASKApp
 
  *****************************************************************************/
 
-ASKApp::~ASKApp()
+Dialog::~Dialog()
 {
-	ASKDeleteGlobals();
 }
 
 /******************************************************************************
- InitStrings (static)
-
-	If we are going to print something to the command line and then quit,
-	we haven't initialized JX, but we still need the string data.
+ OKToDeactivate (virtual protected)
 
  ******************************************************************************/
 
-void
-ASKApp::InitStrings()
+bool
+Dialog::OKToDeactivate()
 {
-	JGetStringManager()->Register(kAppSignature, kASKDefaultStringData);
+	if (JXGetStringDialog::OKToDeactivate())
+	{
+		std::cout << GetString() << std::endl;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

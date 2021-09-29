@@ -3,11 +3,10 @@
 
 JX_ROOT := ../JX
 
-APP_NAME       := nps-ssh-askpass
-APP_VERSION    := ${shell cat release/VERSION}
-SIGNATURE      := ${APP_NAME}
+APP_NAME  := nps-ssh-askpass
+SIGNATURE := ${APP_NAME}
+
 J_STRING_FILES := strings/*
-RPM_LIB_PATH   := /usr/lib/${SIGNATURE}
 
 MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
 include ${MAKE_INCLUDE}/jx_config
@@ -26,47 +25,11 @@ LIB_DEPS := ${JX_LIB_ROOT}/libjx.a \
 # make variables
 
 LOADLIBES := ${J_STD_LIBS}
-ifdef J_SYSTEM_HAS_SHARED_LIBS
-  LDFLAGS := -Xlinker -R${RPM_LIB_PATH}
-endif
+LDFLAGS   := 
 
 #####
 
 include ${MAKE_INCLUDE}/app_targets
-
-#
-# string data
-#
-
-.PHONY : strings
-strings: build_version_string
-	compile_jstrings ${J_STRING_FILES} \
-      --code kASKDefaultStringData ./code/askStringData.h
-
-${APP_NAME}:: strings
-
-#
-# binary distributions
-#
-
-ASKPASS := ${APP_NAME}-${APP_VERSION}
-
-ASKPASS_TAR_DIR := ${shell pwd}
-
-ASKPASS_RELEASE_TAR_NAME := nps_ssh_askpass_${APP_VERSION}.tar
-
-RPM_TAR_FILE  := ${RPM_SRC_DIR}/nps_ssh_askpass_${APP_VERSION}.tar
-RPM_SPEC_FILE := ./release/pkg/${APP_NAME}.spec
-
-DEB_CTRL_FILE := ./release/pkg/${APP_NAME}.debctrl
-DEB_PKG_FILE  := ${APP_NAME}_${APP_VERSION}_i386.deb
-
-.PHONY : release
-release: pre_build_pkgs default
-	@${J_STRIP_DEBUG} ${call EXE, ${APP_NAME}}
-	@${MAKE} PKG_PATH=${ASKPASS} init_tarball
-	@ln -s ../${call EXE,${APP_NAME}} ${ASKPASS}/${call EXE,${APP_NAME}}
-	@${MAKE} PKG_PATH=${ASKPASS} SOURCE_TAR_NAME=${ASKPASS_RELEASE_TAR_NAME} build_pkgs
 
 # DO NOT DELETE THIS LINE -- Code Crusader depends on it.
 

@@ -8,17 +8,17 @@ T
 F
 "./code/main.cpp"
 T
-2 "ASKApp.cpp"
+2 "App.cpp"
 F
-"./code/ASKApp.cpp"
+"./code/App.cpp"
 T
-2 "askGlobals.cpp"
+2 "globals.cpp"
 F
-"./code/askGlobals.cpp"
+"./code/globals.cpp"
 T
-2 "ASKDialog.cpp"
+2 "Dialog.cpp"
 F
-"./code/ASKDialog.cpp"
+"./code/Dialog.cpp"
 F
 T
 1 "misc"
@@ -27,9 +27,9 @@ T
 F
 "./README"
 T
-2 "nps-ssh-askpass_strings"
+2 "strings"
 F
-"./strings/nps-ssh-askpass_strings"
+"./strings/strings"
 F
 F
 # tasks

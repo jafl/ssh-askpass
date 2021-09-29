@@ -13,12 +13,12 @@ https://sourceforge.net/projects/nps-ssh-askpass/"
 
 # ASKDialog
 
-Title::ASKDialog	"OpenSSH"
-Prompt::ASKDialog	"Please enter your authentication passphrase:"
+Title::Dialog	"OpenSSH"
+Prompt::Dialog	"Please enter your authentication passphrase:"
 
 # askGlobals
 
-Description::askGlobals
+Description::globals
 "nps-ssh-askpass $version
 
 Program description

@@ -1,5 +1,5 @@
 /******************************************************************************
- ASKDialog.h
+ Dialog.h
 
 	Copyright (C) 2006 by John Lindal.
 
@@ -12,13 +12,13 @@
 
 class JXPasswordInput;
 
-class ASKDialog : public JXGetStringDialog
+class Dialog : public JXGetStringDialog
 {
 public:
 
-	ASKDialog(JXDirector* supervisor);
+	Dialog(JXDirector* supervisor);
 
-	virtual	~ASKDialog();
+	virtual	~Dialog();
 
 protected:
 

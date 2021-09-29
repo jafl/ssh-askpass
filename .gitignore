@@ -2,6 +2,6 @@ nps-ssh-askpass
 Makefile
 *.o
 *.bak
-code/askStringData.h
+code/stringData.h
 strings/version
 .jcc

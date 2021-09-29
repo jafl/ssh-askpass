@@ -5,8 +5,8 @@
 @nps-ssh-askpass
 
 .cpp ./code/main
-.cpp ./code/ASKApp
-.cpp ./code/askGlobals
-.cpp ./code/ASKDialog
+.cpp ./code/App
+.cpp ./code/globals
+.cpp ./code/Dialog
 
 literal: ${LIB_DEPS}

@@ -1,38 +1,33 @@
 /******************************************************************************
- ASKDialog.cpp
+ App.cpp
 
-	Asks for the passphrase and prints it to stdout.
-
-	BASE CLASS = public JXGetStringDialog
+	BASE CLASS = public JXApplication
 
 	Copyright (C) 2006 by John Lindal.
 
  *****************************************************************************/
 
-#include "ASKDialog.h"
-#include "ASKApp.h"
-#include "askGlobals.h"
-#include <jx-af/jx/JXWindow.h>
-#include <jx-af/jx/JXStaticText.h>
-#include <jx-af/jx/JXPasswordInput.h>
-#include <jx-af/jx/JXTextButton.h>
+#include "App.h"
+#include "stringData.h"
+#include "globals.h"
 #include <jx-af/jcore/jAssert.h>
 
-// string ID's
+static const JUtf8Byte* kAppSignature = "nps-ssh-askpass";
 
 /******************************************************************************
  Constructor
 
  *****************************************************************************/
 
-ASKDialog::ASKDialog
+App::App
 	(
-	JXDirector* supervisor
+	int*	argc,
+	char*	argv[]
 	)
 	:
-	JXGetStringDialog(supervisor, JGetString("Title::ASKDialog"),
-					  JGetString("Prompt::ASKDialog"), JString::empty, true, true)
+	JXApplication(argc, argv, kAppSignature, kDefaultStringData)
 {
+	CreateGlobals(this);
 }
 
 /******************************************************************************
@@ -40,25 +35,21 @@ ASKDialog::ASKDialog
 
  *****************************************************************************/
 
-ASKDialog::~ASKDialog()
+App::~App()
 {
+	DeleteGlobals();
 }
 
 /******************************************************************************
- OKToDeactivate (virtual protected)
+ InitStrings (static)
+
+	If we are going to print something to the command line and then quit,
+	we haven't initialized JX, but we still need the string data.
 
  ******************************************************************************/
 
-bool
-ASKDialog::OKToDeactivate()
+void
+App::InitStrings()
 {
-	if (JXGetStringDialog::OKToDeactivate())
-	{
-		std::cout << GetString() << std::endl;
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	JGetStringManager()->Register(kAppSignature, kDefaultStringData);
 }

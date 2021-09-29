@@ -1,5 +1,5 @@
 /******************************************************************************
- ASKApp.h
+ App.h
 
 	Copyright (C) 2006 by John Lindal.
 
@@ -10,13 +10,13 @@
 
 #include <jx-af/jx/JXApplication.h>
 
-class ASKApp : public JXApplication
+class App : public JXApplication
 {
 public:
 
-	ASKApp(int* argc, char* argv[]);
+	App(int* argc, char* argv[]);
 
-	virtual	~ASKApp();
+	virtual	~App();
 
 	static void	InitStrings();
 };
