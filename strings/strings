@@ -11,12 +11,12 @@ You should have received a copy of the GNU General Public License along with thi
 
 https://sourceforge.net/projects/nps-ssh-askpass/"
 
-# ASKDialog
+# Dialog
 
 Title::Dialog	"OpenSSH"
 Prompt::Dialog	"Please enter your authentication passphrase:"
 
-# askGlobals
+# globals
 
 Description::globals
 "nps-ssh-askpass $version
@@ -25,7 +25,7 @@ Program description
 
 $copyright"
 
-# ASKMDIServer
+# MDIServer
 #2345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 CommandLineHelp::main
