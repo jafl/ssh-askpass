@@ -16,7 +16,7 @@ public:
 
 	App(int* argc, char* argv[]);
 
-	virtual	~App();
+	~App() override;
 
 	static void	InitStrings();
 };

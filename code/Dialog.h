@@ -18,11 +18,11 @@ public:
 
 	Dialog(JXDirector* supervisor);
 
-	virtual	~Dialog();
+	~Dialog() override;
 
 protected:
 
-	virtual bool	OKToDeactivate();
+	bool	OKToDeactivate() override;
 };
 
 #endif
