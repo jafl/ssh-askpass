@@ -1,3 +1,12 @@
+[![Github CI](https://github.com/jafl/ssh-askpass/actions/workflows/ci.yml/badge.svg)](https://github.com/jafl/ssh-askpass/actions/workflows/ci.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=main&project=jafl_ssh-askpass&metric=alert_status)](https://sonarcloud.io/dashboard?id=jafl_ssh-askpass&branch=main)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=main&project=jafl_ssh-askpass&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=jafl_ssh-askpass&branch=main)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=main&project=jafl_ssh-askpass&metric=security_rating)](https://sonarcloud.io/dashboard?id=jafl_ssh-askpass&branch=main)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?branch=main&project=jafl_ssh-askpass&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=jafl_ssh-askpass&branch=main)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=main&project=jafl_ssh-askpass&metric=ncloc)](https://sonarcloud.io/dashboard?id=jafl_ssh-askpass&branch=main)
+
 # SSH Askpass
 
 nps-ssh-askpass does exactly the same job as x11-ssh-askpass, but it's not as hard to compile on MacOS, because it doesn't require xmkmf.
