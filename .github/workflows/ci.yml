@@ -79,10 +79,15 @@ jobs:
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v1
 
-      - name: Store release artifact
+      - name: Build release artifacts
+        run: |
+          make release
+          mv ../nps_ssh_askpass_*.tar.gz ../nps-ssh-askpass_*.deb .
+
+      - name: Store release artifacts
         uses: actions/upload-artifact@v2
         with:
           name: release
           path: |
-            ../nps_ssh_askpass_*.tar.gz
-            ../nps-ssh-askpass_*.deb
+            nps_ssh_askpass_*.tar.gz
+            nps-ssh-askpass_*.deb
