@@ -14,4 +14,4 @@ fi
 install -m755 nps-ssh-askpass $BIN
 
 mkdir -p $DOC
-cp README COPYING $DOC
+cp README.md COPYING $DOC
