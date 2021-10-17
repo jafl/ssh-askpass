@@ -12,13 +12,6 @@ jobs:
       SONAR_SERVER_URL: "https://sonarcloud.io"
       BUILD_WRAPPER_OUT_DIR: sonar_output
     steps:
-      - name: debug
-        run: |
-          dpkg --print-architecture
-          uname -p
-          uname -m
-          arch
-
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
