@@ -82,7 +82,7 @@ jobs:
 
       - name: Build release artifacts
         run: |
-          make VERBOSE=1 release
+          make release
           mv ../nps_ssh_askpass_*.tar.gz ../nps-ssh-askpass_*.deb .
 
       - name: Store release artifacts
