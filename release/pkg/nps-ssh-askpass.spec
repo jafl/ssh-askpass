@@ -4,7 +4,7 @@ Version: %pkg_version
 Release: 1
 License: GPL
 Group: Utilities
-Source: nps_ssh_askpass_%pkg_version.tar
+Source: %pkg_name
 Requires: libX11, libXinerama, libXpm, libXft, libxml2, gd, libjpeg, libpng, libicu, pcre
 
 %description
@@ -20,7 +20,7 @@ to ask for a password.
 %define askpass_doc_dir  /usr/share/doc/nps-ssh-askpass
 %define askpass_lib_dir  /usr/lib/nps-ssh-askpass
 
-./install "$RPM_BUILD_ROOT" nozip
+./install "$RPM_BUILD_ROOT"
 
 %post
 gunzip %askpass_lib_dir/*.gz
