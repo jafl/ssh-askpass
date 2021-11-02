@@ -64,7 +64,7 @@ jobs:
         run: |
           curl -O http://libjx.sourceforge.net/ci/jx-application-framework.deb
           sudo apt install ./jx-application-framework.deb
-          ./configure release
+          ./configure ci
           makemake
 
       - name: Build
@@ -107,8 +107,12 @@ jobs:
 
       - name: Configure
         run: |
-          ./configure release
-          brew upgrade
+          curl -O http://libjx.sourceforge.net/ci/jx-application-framework_darwin.tgz
+          tar -xzf jx-application-framework_darwin.tgz
+          pushd jx-application-framework-1ci
+          sudo ./install /usr/local
+          popd
+          ./configure ci
           brew install cask
           brew install --cask xquartz
 
