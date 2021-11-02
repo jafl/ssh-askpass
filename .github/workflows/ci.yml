@@ -107,14 +107,21 @@ jobs:
 
       - name: Configure
         run: |
+          date
           curl -O http://libjx.sourceforge.net/ci/jx-application-framework_darwin.tgz
           tar -xzf jx-application-framework_darwin.tgz
           pushd jx-application-framework-1ci
           sudo ./install /usr/local
           popd
+          date
           ./configure ci
+          date
+          brew upgrade
+          date
           brew install cask
           brew install --cask xquartz
+          date
+          makemake
 
       - name: Build
         run: make
