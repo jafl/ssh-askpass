@@ -17,9 +17,6 @@ if [[ $SYS == Darwin ]]; then
 	if ! command -v brew; then
 		echo Installing Homebrew...;
 		sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-	else
-		echo Updating Homebrew...;
-		brew update;
 	fi;
 
 	if [[ $1 != ci ]]; then

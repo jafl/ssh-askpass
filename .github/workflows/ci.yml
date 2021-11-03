@@ -116,8 +116,6 @@ jobs:
           date
           ./configure ci
           date
-          brew upgrade
-          date
           brew install cask
           brew install --cask xquartz
           date
