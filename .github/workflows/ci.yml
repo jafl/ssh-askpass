@@ -98,6 +98,7 @@ jobs:
     name: Build & Package MacOS
     runs-on: macos-11
     env:
+      PKG_CONFIG_PATH: /usr/local/opt/icu4c/lib/pkgconfig
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
     steps:
