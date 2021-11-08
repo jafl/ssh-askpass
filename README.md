@@ -23,9 +23,9 @@ nps-ssh-askpass does exactly the same job as x11-ssh-askpass, but it's not as ha
 
 For macOS, the easiest way to install is via [Homebrew](https://brew.sh):
 
-* `brew install --cask xquartz`
-* `brew tap jafl/jx`
-* `brew install jafl/jx/nps-ssh-askpass`
+    brew install --cask xquartz
+    brew tap jafl/jx
+    brew install jafl/jx/nps-ssh-askpass
 
 For all other systems, download a package from:
 
