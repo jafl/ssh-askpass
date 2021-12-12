@@ -1,5 +1,5 @@
 Summary: nps-ssh-askpass provides a cross-platform user interface for SSH to ask for a password.
-Name: %pkg_name
+Name: %app_name
 Version: %pkg_version
 Release: 1
 License: GPL
@@ -17,21 +17,13 @@ to ask for a password.
 
 %install
 
-%define askpass_doc_dir  /usr/share/doc/nps-ssh-askpass
-%define askpass_lib_dir  /usr/lib/nps-ssh-askpass
+%define askpass_doc_dir /usr/share/doc/nps-ssh-askpass
 
 ./install "$RPM_BUILD_ROOT"
-
-%post
-gunzip %askpass_lib_dir/*.gz
-
-%postun
-rm -rf %askpass_lib_dir
 
 %files
 
 %docdir %askpass_doc_dir
 
 /usr/bin/nps-ssh-askpass
-%askpass_lib_dir
 %askpass_doc_dir
