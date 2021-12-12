@@ -1,4 +1,4 @@
-Package: nps-ssh-askpass
+Package: %NAME%
 Version: %VERSION%
 Maintainer: John Lindal <https://about.me/johnlindal>
 Homepage: https://github.com/jafl/ssh-askpass

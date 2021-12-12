@@ -1,5 +1,5 @@
 Summary: nps-ssh-askpass provides a cross-platform user interface for SSH to ask for a password.
-Name: nps-ssh-askpass
+Name: %pkg_name
 Version: %pkg_version
 Release: 1
 License: GPL
