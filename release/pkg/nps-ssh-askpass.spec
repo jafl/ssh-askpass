@@ -19,7 +19,7 @@ to ask for a password.
 
 %define askpass_doc_dir /usr/share/doc/nps-ssh-askpass
 
-./install "$RPM_BUILD_ROOT"
+./install "$RPM_BUILD_ROOT"/usr
 
 %files
 
