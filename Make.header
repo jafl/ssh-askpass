@@ -7,7 +7,8 @@ else
   JX_ROOT := /usr/local
 endif
 
-APP_NAME := nps-ssh-askpass
+APP_NAME  := nps-ssh-askpass
+REPO_NAME := ssh-askpass
 
 MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
 include ${MAKE_INCLUDE}/jx_config
