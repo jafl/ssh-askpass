@@ -10,7 +10,6 @@ Requires: libX11, libXinerama, libXpm, libXft, libxml2, gd, libjpeg, libpng, lib
 %description
 nps-ssh-askpass provides a cross-platform user interface for SSH
 to ask for a password.
-(http://www.newplanetsoftware.com/ssh_askpass/)
 
 %prep
 %setup
