@@ -23,7 +23,7 @@ apps:
   nps-ssh-askpass:
     command: bin/nps-ssh-askpass
     plugs:
-      - x11
+      - unity7
 
 parts:
   deps:
