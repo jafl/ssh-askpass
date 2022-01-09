@@ -18,6 +18,30 @@ apps:
     command: bin/nps-ssh-askpass
 
 parts:
+  deps:
+    plugin: nil
+    stage-packages:
+      - libace-6.4.5
+      - libfontconfig1
+      - libfreetype6
+      - libgd3
+      - libicu66
+      - libjbig0
+      - libjpeg-turbo8
+      - libpng16-16
+      - libtiff5
+      - libwebp6
+      - libx11-6
+      - libxau6
+      - libxcb1
+      - libxdmcp6
+      - libxext6
+      - libxft2
+      - libxinerama1
+      - libxml2
+      - libxpm4
+      - libxrender1
+
   nps-ssh-askpass:
     plugin: autotools
     source: .
@@ -55,24 +79,3 @@ parts:
       - aspell
     build-snaps:
       - jx-application-framework
-    stage-packages:
-      - libace-6.4.5
-      - libfontconfig1
-      - libfreetype6
-      - libgd3
-      - libicu66
-      - libjbig0
-      - libjpeg-turbo8
-      - libpng16-16
-      - libtiff5
-      - libwebp6
-      - libx11-6
-      - libxau6
-      - libxcb1
-      - libxdmcp6
-      - libxext6
-      - libxft2
-      - libxinerama1
-      - libxml2
-      - libxpm4
-      - libxrender1
