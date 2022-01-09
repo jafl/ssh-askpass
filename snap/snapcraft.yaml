@@ -21,11 +21,9 @@ architectures:
 
 apps:
   nps-ssh-askpass:
-    command: bin/nps-ssh-askpass
-    environment:
-      XLOCALEDIR: $SNAP/usr/share/X11/locale
-      FONTCONFIG_PATH: $SNAP/etc/fonts
-      FONTCONFIG_FILE: $SNAP/etc/fonts/fonts.conf
+    command: bin/desktop-launch nps-ssh-askpass
+#    environment:
+#      XLOCALEDIR: $SNAP/usr/share/X11/locale
     plugs:
       - x11
       - desktop-legacy
@@ -91,3 +89,7 @@ parts:
       - libxml2
       - libxpm4
       - libxrender1
+  launcher:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: glib-only
+    plugin: make
