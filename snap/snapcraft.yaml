@@ -22,13 +22,13 @@ architectures:
 apps:
   nps-ssh-askpass:
     command: bin/nps-ssh-askpass
+    environment:
+      - XLOCALEDIR: $SNAP/usr/share/X11/locale
     plugs:
       - desktop-legacy
 
 parts:
   nps-ssh-askpass:
-    environment:
-      - XLOCALEDIR: $SNAP/usr/share/X11/locale
     plugin: autotools
     source: .
     disable-parallel: true
