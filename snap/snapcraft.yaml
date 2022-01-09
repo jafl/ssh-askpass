@@ -24,6 +24,8 @@ apps:
     command: bin/nps-ssh-askpass
     environment:
       XLOCALEDIR: $SNAP/usr/share/X11/locale
+      FONTCONFIG_PATH: $SNAP/etc/fonts
+      FONTCONFIG_FILE: $SNAP/etc/fonts/fonts.conf
     plugs:
       - x11
       - desktop-legacy
