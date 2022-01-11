@@ -11,6 +11,10 @@
 
 nps-ssh-askpass does exactly the same job as x11-ssh-askpass, but it's not as hard to compile on MacOS, because it doesn't require xmkmf.
 
+[![Download from Github](http://libjx.sourceforge.net/github.png)](https://github.com/jafl/ssh-askpass/releases/latest)
+
+<a href="https://sourceforge.net/p/nps-ssh-askpass/"><img alt="Download Leibnitz" src="https://sourceforge.net/sflogo.php?type=17&group_id=170488" width="250"></a>
+
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/nps-ssh-askpass)
 
 
