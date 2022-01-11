@@ -22,8 +22,6 @@ architectures:
 apps:
   nps-ssh-askpass:
     command: bin/desktop-launch nps-ssh-askpass
-#    environment:
-#      XLOCALEDIR: $SNAP/usr/share/X11/locale
     plugs:
       - x11
       - desktop-legacy
@@ -32,7 +30,6 @@ parts:
   nps-ssh-askpass:
     plugin: autotools
     source: .
-    disable-parallel: true
     build-environment:
       - JX_ROOT: /snap/jx-application-framework/current
       - PATH: $PATH:$JX_ROOT/bin
