@@ -33,7 +33,7 @@ For all other systems, download a package:
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/nps-ssh-askpass)
 
-If you download the tar, unpack it, cd into the directory, and run `sudo ./install`.
+If you download a tar, unpack it, cd into the directory, and run `sudo ./install`.
 
 Otherwise, put the program (`nps-ssh-askpass`) in a directory that is on your execution path.  `~/bin` is typically a good choice.
 
