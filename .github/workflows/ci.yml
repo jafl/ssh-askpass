@@ -64,9 +64,6 @@ jobs:
 
       - name: Configure
         run: |
-          sudo apt update;
-          curl -LO https://libjx.sourceforge.net/ci/jx-application-framework.deb
-          sudo apt install ./jx-application-framework.deb
           ./configure ci
           makemake
 
