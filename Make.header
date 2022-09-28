@@ -34,16 +34,11 @@ LDLIBS := ${J_STD_LIBS}
 
 include ${MAKE_INCLUDE}/app_targets
 
-.PHONY : post_link
-post_link::
-	echo ${CPPFLAGS}
-	echo ${CXXFLAGS}
-	echo ${LDLIBS}
-	echo ${J_STD_LIBS}
-	echo ${J_GCC_LIBS}
-	echo ${J_ACE_LIBS}
-	echo ${J_X11_LIBS}
-	echo ${J_RAW_SYSTEM_STUFF}
+.PHONY : libs
+libs::
+	@echo J_STD_LIBS: ${J_STD_LIBS}
+	@echo LDLIBS: ${LDLIBS}
+	cat Makefile
 
 # DO NOT DELETE THIS LINE -- Code Crusader depends on it.
 
