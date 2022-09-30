@@ -1,9 +1,12 @@
 #!/bin/bash
 
 PRE=$1;
+if [[ -z $PRE ]]; then
+	PRE=/usr/local;
+fi
 
-BIN=$PRE/usr/bin;
-DOC=$PRE/usr/share/doc/nps-ssh-askpass;
+BIN=$PRE/bin;
+DOC=$PRE/share/doc/nps-ssh-askpass;
 
 rm -f  $BIN/nps-ssh-askpass;
 rm -rf $DOC;

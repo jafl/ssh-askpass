@@ -16,13 +16,13 @@ to ask for a password.
 
 %install
 
-%define askpass_doc_dir /usr/share/doc/nps-ssh-askpass
+%define askpass_doc_dir /usr/local/share/doc/nps-ssh-askpass
 
-./install "$RPM_BUILD_ROOT"/usr
+./install $RPM_BUILD_ROOT/usr/local
 
 %files
 
 %docdir %askpass_doc_dir
 
-/usr/bin/nps-ssh-askpass
+/usr/local/bin/nps-ssh-askpass
 %askpass_doc_dir
