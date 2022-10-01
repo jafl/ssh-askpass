@@ -54,4 +54,6 @@ if [[ ! -d $INSTALL_ROOT/include/jx-af/ && ! -f ../JX/Makefile && -z $JX_ROOT ]]
 
 fi
 
+echo $PATH;
+ls /usr/local/bin;
 makemake;

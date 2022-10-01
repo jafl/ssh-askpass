@@ -21,7 +21,7 @@ architectures:
 
 apps:
   nps-ssh-askpass:
-    command: bin/desktop-launch nps-ssh-askpass
+    command: bin/desktop-launch usr/local/bin/nps-ssh-askpass
     plugs:
       - x11
       - desktop-legacy
@@ -37,7 +37,7 @@ parts:
     autotools-configure-parameters:
       - release
     stage:
-      - bin/nps-ssh-askpass
+      - usr/local/bin/nps-ssh-askpass
     build-packages:
       - g++
       - make
