@@ -2,9 +2,10 @@ name: nps-ssh-askpass
 title: SSH Askpass
 base: core20
 version: "1.2.0"
-#source-code: https://github.com/jafl/ssh-askpass
-#issues: https://github.com/jafl/ssh-askpass/issues
-#contact: https://johnlindal.wixsite.com/aboutme/contact-me
+license: GPL-3.0-or-later
+source-code: https://github.com/jafl/ssh-askpass
+issues: https://github.com/jafl/ssh-askpass/issues
+contact: https://johnlindal.wixsite.com/aboutme/contact-me
 summary: Cross-platform replacement for x11-ssh-askpass.
 description: |
   nps-ssh-askpass provides a cross-platform user interface for SSH
