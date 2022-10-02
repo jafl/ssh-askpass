@@ -22,7 +22,7 @@ architectures:
 
 apps:
   nps-ssh-askpass:
-    command: bin/desktop-launch usr/local/bin/nps-ssh-askpass
+    command: bin/desktop-launch nps-ssh-askpass
     plugs:
       - x11
       - desktop-legacy
@@ -37,8 +37,6 @@ parts:
       - LD_LIBRARY_PATH: $SNAPCRAFT_PART_INSTALL/lib:$SNAPCRAFT_PART_INSTALL/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
     autotools-configure-parameters:
       - release
-    organize:
-      usr/local/bin/nps-ssh-askpass: bin/nps-ssh-askpass
     stage:
       - bin/nps-ssh-askpass
     build-packages:
