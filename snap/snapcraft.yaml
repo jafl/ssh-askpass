@@ -36,8 +36,10 @@ parts:
       - LD_LIBRARY_PATH: $SNAPCRAFT_PART_INSTALL/lib:$SNAPCRAFT_PART_INSTALL/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
     autotools-configure-parameters:
       - release
+    organize:
+      usr/local/bin/nps-ssh-askpass: bin/nps-ssh-askpass
     stage:
-      - usr/local/bin/nps-ssh-askpass
+      - bin/nps-ssh-askpass
     build-packages:
       - g++
       - make
