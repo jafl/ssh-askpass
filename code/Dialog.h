@@ -16,7 +16,7 @@ class Dialog : public JXGetStringDialog
 {
 public:
 
-	Dialog(JXDirector* supervisor);
+	Dialog();
 
 	~Dialog() override;
 

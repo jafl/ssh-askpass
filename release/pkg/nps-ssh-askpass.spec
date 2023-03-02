@@ -5,7 +5,7 @@ Release: 1
 License: GPL
 Group: Utilities
 Source: %pkg_name
-Requires: libX11, libXinerama, libXpm, libXft, libxml2, gd, libjpeg, libpng, libicu, pcre
+Requires: libX11, libXinerama, libXpm, libXft, libxml2, gd, libjpeg, libpng, libicu, pcre, boost-devel
 
 %description
 nps-ssh-askpass provides a cross-platform user interface for SSH

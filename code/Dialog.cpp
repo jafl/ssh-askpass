@@ -25,13 +25,10 @@
 
  *****************************************************************************/
 
-Dialog::Dialog
-	(
-	JXDirector* supervisor
-	)
+Dialog::Dialog()
 	:
-	JXGetStringDialog(supervisor, JGetString("Title::Dialog"),
-					  JGetString("Prompt::Dialog"), JString::empty, true, true)
+	JXGetStringDialog(JGetString("Title::Dialog"),
+					  JGetString("Prompt::Dialog"), JString::empty, true)
 {
 }
 

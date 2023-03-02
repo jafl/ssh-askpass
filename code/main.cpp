@@ -34,11 +34,12 @@ main
 	auto* app = jnew App(&argc, argv);
 	assert( app != nullptr );
 
-	// You may want to create all directors inside HandleCmdLineOptions()
-
-	auto* dir = jnew Dialog(app);
-	assert( dir != nullptr );
-	dir->BeginDialog();
+	JScheduleTask([]()
+	{
+		auto* dir = jnew Dialog;
+		assert( dir != nullptr );
+		dir->DoDialog();
+	});
 
 	app->Run();
 	return 0;
