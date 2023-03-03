@@ -86,7 +86,7 @@ parts:
       - libxft2
       - libxinerama1
       - libxml2
-      - libboost-fiber1.74.0
+      - libboost-fiber-dev
       - libxpm4
       - libxrender1
   launcher:
