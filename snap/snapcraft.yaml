@@ -65,16 +65,16 @@ parts:
   libs:
     plugin: nil
     stage-packages:
-      - libace-7.0.6
+      - libace-6.4.5
       - libfontconfig1
       - libfreetype6
       - libgd3
-      - libicu70
+      - libicu66
       - libjbig0
       - libjpeg-turbo8
       - libpng16-16
       - libtiff5
-      - libwebp7
+      - libwebp6
       - libx11-6
       - libxau6
       - libxcb1
