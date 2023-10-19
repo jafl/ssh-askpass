@@ -1,7 +1,7 @@
 name: nps-ssh-askpass
 title: SSH Askpass
 base: core20
-version: "1.1.1"
+version: "1.2.1"
 license: GPL-3.0-or-later
 source-code: https://github.com/jafl/ssh-askpass
 issues: https://github.com/jafl/ssh-askpass/issues
