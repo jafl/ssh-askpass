@@ -91,3 +91,7 @@ parts:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-subdir: glib-only
     plugin: make
+
+package-repositories:
+  - type: apt
+    ppa: ubuntu-toolchain-r/test
