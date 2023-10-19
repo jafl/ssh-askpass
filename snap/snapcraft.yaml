@@ -37,6 +37,7 @@ parts:
     stage:
       - bin/nps-ssh-askpass
     build-packages:
+      - g++-11
       - make
       - pkg-config
       - libx11-dev
