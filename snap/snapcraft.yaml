@@ -1,7 +1,7 @@
 name: nps-ssh-askpass
 title: SSH Askpass
-base: core22
-version: "1.2.0"
+base: core20
+version: "1.1.1"
 license: GPL-3.0-or-later
 source-code: https://github.com/jafl/ssh-askpass
 issues: https://github.com/jafl/ssh-askpass/issues
@@ -22,8 +22,7 @@ apps:
   nps-ssh-askpass:
     command: bin/desktop-launch nps-ssh-askpass
     plugs:
-      - x11
-      - desktop-legacy
+      - unity7
 
 parts:
   nps-ssh-askpass:
