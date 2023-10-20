@@ -17,7 +17,7 @@ jobs:
   build-ubuntu-release:
     name: "-"
     if: ${{ startsWith(github.ref, 'refs/tags/') }}
-    uses: jafl/jx_application_framework/.github/workflows/app-build-ubuntu-release.yml@main
+    uses: jafl/jx_application_framework/.github/workflows/app-build-ubuntu.yml@main
     with:
       pkg-name: nps-ssh-askpass
 
