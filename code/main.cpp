@@ -32,12 +32,10 @@ main
 	ParseTextOptions(argc, argv);
 
 	auto* app = jnew App(&argc, argv);
-	assert( app != nullptr );
 
 	JScheduleTask([]()
 	{
 		auto* dir = jnew Dialog;
-		assert( dir != nullptr );
 		dir->DoDialog();
 	});
 
