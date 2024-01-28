@@ -25,7 +25,7 @@ App::App
 	char*	argv[]
 	)
 	:
-	JXApplication(argc, argv, kAppSignature, kDefaultStringData)
+	JXApplication(argc, argv, kAppSignature, kAppSignature, kDefaultStringData)
 {
 	CreateGlobals(this);
 }
