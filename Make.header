@@ -15,8 +15,6 @@ REPO_NAME := ssh-askpass
 MAKE_INCLUDE := ${JX_ROOT}/include/jx-af/make
 include ${MAKE_INCLUDE}/jx_config
 
-SEARCHDIRS := -I./code ${SEARCHDIRS}
-
 # makemake variables
 
 DEPENDFLAGS := ${J_COMPILER_DEPEND_FLAGS} ${SEARCHDIRS}
